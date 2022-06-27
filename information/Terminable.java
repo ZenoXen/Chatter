@@ -1,4 +1,5 @@
 package information;
+
 public interface Terminable {
-	public void terminate();
+    public void terminate();
 }
