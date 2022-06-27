@@ -17,7 +17,6 @@ public class FileController {
     private static SelectDialog users;
     private static FileDialog outFile;
     private static FileDialog inFile;
-    private static FileReciver fr;
 
     public static void setController() {
         UI ui = (UI) (ComponentManager.getReference("UI"));
@@ -29,7 +28,7 @@ public class FileController {
         inFile = new FileDialog(ui, "Save as", FileDialog.SAVE);
         inFile.setVisible(false);
         inFile.setLocationRelativeTo(users);
-        fr = new FileReciver();
+        FileReciver fr = new FileReciver();
         fr.start();
     }
 
@@ -79,15 +78,14 @@ public class FileController {
     }
 
     private static String getInfo(String file, long len) {
-        StringBuffer sb = new StringBuffer();
-        sb.append("是否接受文件");
-        sb.append(System.lineSeparator());
-        sb.append("文件名: ");
-        sb.append(file);
-        sb.append(System.lineSeparator());
-        sb.append("大小: ");
-        sb.append(String.format("%.2f", (double) (len / (1024 * 1024))));
-        sb.append(" MB");
-        return sb.toString();
+        String sb = "是否接受文件" +
+                System.lineSeparator() +
+                "文件名: " +
+                file +
+                System.lineSeparator() +
+                "大小: " +
+                String.format("%.2f", (double) (len / (1024 * 1024))) +
+                " MB";
+        return sb;
     }
 }

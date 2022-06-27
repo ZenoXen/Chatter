@@ -21,7 +21,7 @@ public class UI extends JFrame implements Setable {
         addListeners();
     }
 
-    protected void finalize() throws Throwable {
+    protected void finalize() {
         StateController.broad();
     }
 

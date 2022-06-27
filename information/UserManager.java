@@ -12,9 +12,9 @@ public class UserManager {
     private static final HashMap<String, InetAddress> addrs;
 
     static {
-        onlineMsgs = new HashMap<InetAddress, String>();
-        users = new HashMap<InetAddress, String>();
-        addrs = new HashMap<String, InetAddress>();
+        onlineMsgs = new HashMap<>();
+        users = new HashMap<>();
+        addrs = new HashMap<>();
     }
 
     public static void addUser(InetAddress ip, String nickname) {
@@ -52,7 +52,6 @@ public class UserManager {
     }
 
     public static InetAddress getAddr(String nickname) {
-        InetAddress addr = addrs.get(nickname);
-        return addr;
+        return addrs.get(nickname);
     }
 }

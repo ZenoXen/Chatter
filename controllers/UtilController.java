@@ -58,8 +58,6 @@ public class UtilController {
         Socket s = null;
         try {
             s = new Socket(UserManager.getAddr(nickname).getHostAddress(), NetworkConsts.fileBackPort);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

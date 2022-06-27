@@ -7,7 +7,6 @@ import java.net.SocketException;
 
 public class MsgBroader {
     private DatagramSocket ds;
-    private DatagramPacket dp;
 
     public MsgBroader() {
         try {
@@ -20,7 +19,7 @@ public class MsgBroader {
     public void sendMsg(String msg) {
         if (msg == null || msg.equals("")) return;
         byte[] buf = msg.getBytes();
-        dp = new DatagramPacket(buf, buf.length);
+        DatagramPacket dp = new DatagramPacket(buf, buf.length);
         dp.setPort(NetworkConsts.msgBackPort);
         dp.setAddress(NetworkConsts.broadAddr);
         try {

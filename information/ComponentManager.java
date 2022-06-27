@@ -7,7 +7,7 @@ public class ComponentManager {
     private static final HashMap<String, Component> components;
 
     static {
-        components = new HashMap<String, Component>();
+        components = new HashMap<>();
     }
 
     public static void saveReference(String name, Component c) {

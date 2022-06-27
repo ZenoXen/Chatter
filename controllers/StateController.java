@@ -12,7 +12,6 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class StateController {
-    private static StateReciver sr;
     private static StateBroader sb;
 
     public static void setController() {
@@ -23,7 +22,7 @@ public class StateController {
         } catch (UnknownHostException e) {
             e.printStackTrace();
         }
-        sr = new StateReciver();
+        StateReciver sr = new StateReciver();
         sb = new StateBroader();
         sr.start();
     }

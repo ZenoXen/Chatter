@@ -45,7 +45,7 @@ public class FileSendThread extends Thread implements Terminable {
 
     private void sendFile() {
         BufferedInputStream bis = null;
-        BufferedOutputStream bos = null;
+        BufferedOutputStream bos;
         ProgressDialog pd = new ProgressDialog((UI) ComponentManager.getReference("UI"),
                 "文件传输", false,
                 file.getName(), true, this);
@@ -68,8 +68,6 @@ public class FileSendThread extends Thread implements Terminable {
                 }
             }
             pd.setVisible(false);
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (SocketException se) {
             pd.setVisible(false);
             JOptionPane.showMessageDialog(ComponentManager.getReference("UI"), "对方已终止接受");
@@ -107,7 +105,7 @@ public class FileSendThread extends Thread implements Terminable {
         try {
             bw.write(file.getName());
             bw.newLine();
-            bw.write(new Long(file.length()).toString());
+            bw.write(Long.toString(file.length()));
             bw.newLine();
             bw.flush();
         } catch (IOException e) {

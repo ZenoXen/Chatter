@@ -11,9 +11,6 @@ public class Bar extends JMenuBar implements Setable {
         addListeners();
     }
 
-    public static void main(String[] args) {
-    }
-
     public void init() {
         m = new JMenu("²Ëµ¥");
     }

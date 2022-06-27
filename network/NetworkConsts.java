@@ -9,9 +9,9 @@ public class NetworkConsts {
     public static final int msgForthPort = 30003;
     public static final int msgBackPort = 30004;
     public static final int fileBackPort = 30006;
-    public static InetAddress broadAddr;
+    public static final InetAddress broadAddr;
     public static InetAddress localAddr;
-    public static InetAddress loopAddr;
+    public static final InetAddress loopAddr;
 
     static {
         broadAddr = getAddrByStr("255.255.255.255");

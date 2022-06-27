@@ -12,12 +12,11 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class MsgController {
-    private static MsgReciver mr;
     private static MsgBroader mb;
 
     public static void setController() {
         mb = new MsgBroader();
-        mr = new MsgReciver();
+        MsgReciver mr = new MsgReciver();
         mr.start();
     }
 

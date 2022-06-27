@@ -10,13 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ProgressDialog extends JDialog {
-    private final JLabel fileName;
     private final JProgressBar jpb;
     private final JButton btn;
 
     public ProgressDialog(JFrame f, String title, boolean mode, String fileName, boolean isSend, Thread t) {
         super(f, title, mode);
-        this.fileName = new JLabel(fileName);
+        JLabel fileName1 = new JLabel(fileName);
         jpb = new JProgressBar();
         jpb.setIndeterminate(false);
         jpb.setStringPainted(true);
@@ -24,7 +23,7 @@ public class ProgressDialog extends JDialog {
         btn = new JButton("È¡Ïû");
         this.setSize(300, 200);
         this.setLayout(new BorderLayout());
-        this.add(this.fileName, BorderLayout.NORTH);
+        this.add(fileName1, BorderLayout.NORTH);
         this.add(jpb, BorderLayout.CENTER);
         this.add(btn, BorderLayout.SOUTH);
         addListeners(isSend, t);
@@ -37,12 +36,9 @@ public class ProgressDialog extends JDialog {
     }
 
     private void addListeners(boolean isSend, Thread t) {
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                if (isSend) ((FileSendThread) t).terminate();
-                else ((FileReceiveThread) t).terminate();
-            }
+        btn.addActionListener(arg0 -> {
+            if (isSend) ((FileSendThread) t).terminate();
+            else ((FileReceiveThread) t).terminate();
         });
     }
 }

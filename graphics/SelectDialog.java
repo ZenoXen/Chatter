@@ -24,7 +24,7 @@ public class SelectDialog extends JDialog implements Setable {
 
     @Override
     public void init() {
-        cbx = new JComboBox<String>();
+        cbx = new JComboBox<>();
         confirm = new JButton("È·¶¨");
     }
 
@@ -54,12 +54,9 @@ public class SelectDialog extends JDialog implements Setable {
 
     @Override
     public void addListeners() {
-        confirm.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                closeSelect();
-                FileController.fileOut((String) cbx.getSelectedItem());
-            }
+        confirm.addActionListener(arg0 -> {
+            closeSelect();
+            FileController.fileOut((String) cbx.getSelectedItem());
         });
     }
 }

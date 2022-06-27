@@ -36,23 +36,8 @@ public class ChatCenter extends JPanel implements Setable {
 
     @Override
     public void addListeners() {
-        sendBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                MsgController.messageOut();
-            }
-        });
-        clearBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                MsgController.messageClear();
-            }
-        });
-        transferBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                FileController.showSelect();
-            }
-        });
+        sendBtn.addActionListener(arg0 -> MsgController.messageOut());
+        clearBtn.addActionListener(arg0 -> MsgController.messageClear());
+        transferBtn.addActionListener(e -> FileController.showSelect());
     }
 }
