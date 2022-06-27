@@ -1,4 +1,4 @@
-package controllers;
+package hanlders;
 
 import graphics.InfoArea;
 import information.ComponentManager;
@@ -11,7 +11,7 @@ import javax.swing.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-public class StateController {
+public class StateHandler {
     private static StateBroader sb;
 
     public static void setController() {

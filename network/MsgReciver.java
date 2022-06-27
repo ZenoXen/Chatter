@@ -1,6 +1,6 @@
 package network;
 
-import controllers.MsgController;
+import hanlders.MsgHandler;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -33,7 +33,7 @@ public class MsgReciver extends Thread {
             if (loopEqual || addrEqual)
                 continue;
             String msg = new String(dp.getData(), 0, dp.getLength());
-            MsgController.messageIn(msg);
+            MsgHandler.messageIn(msg);
         }
     }
 }

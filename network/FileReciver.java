@@ -1,7 +1,7 @@
 package network;
 
-import controllers.FileController;
-import controllers.UtilController;
+import hanlders.FileHanlder;
+import hanlders.UtilHandler;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -29,7 +29,7 @@ public class FileReciver extends Thread {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            BufferedReader br = UtilController.getReader(s);
+            BufferedReader br = UtilHandler.getReader(s);
             String file = null;
             long len = 0;
             try {
@@ -38,7 +38,7 @@ public class FileReciver extends Thread {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            File f = FileController.showPrompt(file, len);
+            File f = FileHanlder.showPrompt(file, len);
             if (f == null) {
                 reply(s, false);
                 continue;
@@ -49,7 +49,7 @@ public class FileReciver extends Thread {
     }
 
     private void reply(Socket s, boolean flag) {
-        BufferedWriter bw = UtilController.getWriter(s);
+        BufferedWriter bw = UtilHandler.getWriter(s);
         try {
             if (flag) bw.write("yes");
             else bw.write("no");

@@ -1,4 +1,4 @@
-package controllers;
+package hanlders;
 
 import graphics.SelectDialog;
 import graphics.UI;
@@ -13,7 +13,7 @@ import java.awt.*;
 import java.io.File;
 import java.net.Socket;
 
-public class FileController {
+public class FileHanlder {
     private static SelectDialog users;
     private static FileDialog outFile;
     private static FileDialog inFile;
@@ -60,7 +60,7 @@ public class FileController {
         String fileName = getSelectedFile();
         if (!fileNameValid(fileName)) return;
         File file = new File(fileName);
-        Socket s = UtilController.createSocket(nickname);
+        Socket s = UtilHandler.createSocket(nickname);
         FileSendThread fst = new FileSendThread(s, file);
         fst.start();
     }

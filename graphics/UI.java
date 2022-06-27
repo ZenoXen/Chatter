@@ -1,8 +1,8 @@
 package graphics;
 
-import controllers.FileController;
-import controllers.MsgController;
-import controllers.StateController;
+import hanlders.FileHanlder;
+import hanlders.MsgHandler;
+import hanlders.StateHandler;
 import information.ComponentManager;
 
 import javax.swing.*;
@@ -22,7 +22,7 @@ public class UI extends JFrame implements Setable {
     }
 
     protected void finalize() {
-        StateController.broad();
+        StateHandler.broad();
     }
 
     public void init() {
@@ -37,11 +37,11 @@ public class UI extends JFrame implements Setable {
         this.setLayout(new BorderLayout());
         this.add(ca, BorderLayout.WEST);
         this.add(ia, BorderLayout.EAST);
-        StateController.setController();
-        StateController.broad();
-        MsgController.setController();
+        StateHandler.setController();
+        StateHandler.broad();
+        MsgHandler.setController();
         ComponentManager.saveReference("UI", this);
-        FileController.setController();
+        FileHanlder.setController();
     }
 
     @Override
@@ -49,7 +49,7 @@ public class UI extends JFrame implements Setable {
         this.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
-                StateController.broad();
+                StateHandler.broad();
                 System.exit(0);
             }
         });

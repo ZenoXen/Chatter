@@ -1,6 +1,6 @@
 package network;
 
-import controllers.UtilController;
+import hanlders.UtilHandler;
 import graphics.ProgressDialog;
 import graphics.UI;
 import information.ComponentManager;
@@ -34,7 +34,7 @@ public class FileReceiveThread extends Thread implements Terminable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        BufferedInputStream bis = UtilController.getByteIn(s);
+        BufferedInputStream bis = UtilHandler.getByteIn(s);
         BufferedOutputStream bos = null;
         try {
             bos = new BufferedOutputStream(
@@ -73,6 +73,6 @@ public class FileReceiveThread extends Thread implements Terminable {
                 e.printStackTrace();
             }
         }
-        UtilController.closeSocket(s);
+        UtilHandler.closeSocket(s);
     }
 }

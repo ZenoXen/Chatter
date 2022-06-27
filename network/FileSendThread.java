@@ -1,6 +1,6 @@
 package network;
 
-import controllers.UtilController;
+import hanlders.UtilHandler;
 import graphics.ProgressDialog;
 import graphics.UI;
 import graphics.WaitDialog;
@@ -28,7 +28,7 @@ public class FileSendThread extends Thread implements Terminable {
         wd.setVisible(true);
         sendInfo();
         if (!getResponse()) {
-            UtilController.closeSocket(s);
+            UtilHandler.closeSocket(s);
             wd.setVisible(false);
             JOptionPane.showMessageDialog(ComponentManager.getReference("UI")
                     , "对方拒接接受");
@@ -36,7 +36,7 @@ public class FileSendThread extends Thread implements Terminable {
         }
         wd.setVisible(false);
         sendFile();
-        UtilController.closeSocket(s);
+        UtilHandler.closeSocket(s);
     }
 
     public void terminate() {
@@ -52,7 +52,7 @@ public class FileSendThread extends Thread implements Terminable {
         try {
             bis = new BufferedInputStream(
                     new FileInputStream(file));
-            bos = UtilController.getByteOut(s);
+            bos = UtilHandler.getByteOut(s);
             byte[] buf = new byte[1024 * 1024];
             int len;
             pd.setVisible(true);
@@ -85,11 +85,11 @@ public class FileSendThread extends Thread implements Terminable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        UtilController.closeSocket(s);
+        UtilHandler.closeSocket(s);
     }
 
     private boolean getResponse() {
-        BufferedReader br = UtilController.getReader(s);
+        BufferedReader br = UtilHandler.getReader(s);
         try {
             String reply = br.readLine();
             if (reply != null && reply.equals("no"))
@@ -101,7 +101,7 @@ public class FileSendThread extends Thread implements Terminable {
     }
 
     private void sendInfo() {
-        BufferedWriter bw = UtilController.getWriter(s);
+        BufferedWriter bw = UtilHandler.getWriter(s);
         try {
             bw.write(file.getName());
             bw.newLine();

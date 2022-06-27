@@ -1,13 +1,11 @@
 package graphics;
 
-import controllers.FileController;
+import hanlders.FileHanlder;
 import information.NickManager;
 import information.UserManager;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.net.InetAddress;
 import java.util.Set;
 
@@ -56,7 +54,7 @@ public class SelectDialog extends JDialog implements Setable {
     public void addListeners() {
         confirm.addActionListener(arg0 -> {
             closeSelect();
-            FileController.fileOut((String) cbx.getSelectedItem());
+            FileHanlder.fileOut((String) cbx.getSelectedItem());
         });
     }
 }

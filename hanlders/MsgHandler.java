@@ -1,4 +1,4 @@
-package controllers;
+package hanlders;
 
 import graphics.ChatNorth;
 import graphics.ChatSouth;
@@ -11,7 +11,7 @@ import network.MsgReciver;
 import java.util.Calendar;
 import java.util.Date;
 
-public class MsgController {
+public class MsgHandler {
     private static MsgBroader mb;
 
     public static void setController() {

@@ -1,13 +1,12 @@
-package controllers;
+package hanlders;
 
 import information.UserManager;
 import network.NetworkConsts;
 
 import java.io.*;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
-public class UtilController {
+public class UtilHandler {
     public static BufferedInputStream getByteIn(Socket s) {
         BufferedInputStream bis = null;
         try {

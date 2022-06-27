@@ -1,6 +1,6 @@
 package network;
 
-import controllers.StateController;
+import hanlders.StateHandler;
 import information.NickManager;
 
 import java.io.IOException;
@@ -60,9 +60,9 @@ public class StateReciver extends Thread {
             if (isLocal(fromAddress)) return;
             if (isBroadMsg(port)) {
                 sendBack(from);
-                StateController.processInfo(from, nickname);
+                StateHandler.processInfo(from, nickname);
             } else
-                StateController.processInfo(from, nickname);
+                StateHandler.processInfo(from, nickname);
         }
     }
 }

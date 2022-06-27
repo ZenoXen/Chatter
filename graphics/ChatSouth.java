@@ -1,6 +1,6 @@
 package graphics;
 
-import controllers.MsgController;
+import hanlders.MsgHandler;
 import information.ComponentManager;
 
 import javax.swing.*;
@@ -47,7 +47,7 @@ public class ChatSouth extends JPanel implements Setable {
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER)
                     if (e.isControlDown())
-                        MsgController.messageOut();
+                        MsgHandler.messageOut();
             }
         });
     }

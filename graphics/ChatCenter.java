@@ -1,12 +1,10 @@
 package graphics;
 
-import controllers.FileController;
-import controllers.MsgController;
+import hanlders.FileHanlder;
+import hanlders.MsgHandler;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ChatCenter extends JPanel implements Setable {
     private JButton sendBtn;
@@ -36,8 +34,8 @@ public class ChatCenter extends JPanel implements Setable {
 
     @Override
     public void addListeners() {
-        sendBtn.addActionListener(arg0 -> MsgController.messageOut());
-        clearBtn.addActionListener(arg0 -> MsgController.messageClear());
-        transferBtn.addActionListener(e -> FileController.showSelect());
+        sendBtn.addActionListener(arg0 -> MsgHandler.messageOut());
+        clearBtn.addActionListener(arg0 -> MsgHandler.messageClear());
+        transferBtn.addActionListener(e -> FileHanlder.showSelect());
     }
 }
