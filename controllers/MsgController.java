@@ -31,10 +31,10 @@ public class MsgController {
         ChatNorth cn = (ChatNorth) (ComponentManager.getReference("ChatNorth"));
         String content = cs.getContent();
         if (content == null || content.equals("")) return;
-        StringBuilder sb = new StringBuilder("");
+        StringBuilder sb = new StringBuilder();
         Date d = Calendar.getInstance().getTime();
         MsgHead mh = new MsgHead(NickManager.getNick(), d.toString());
-        sb.append(mh.toString());
+        sb.append(mh);
         sb.append(System.lineSeparator());
         sb.append(content);
         String msg = sb.toString();

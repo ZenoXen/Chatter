@@ -1,8 +1,8 @@
 package information;
 
 public class MsgHead {
-    private String nickname;
-    private String date;
+    private final String nickname;
+    private final String date;
 
     public MsgHead(String nickname, String date) {
         this.nickname = nickname;

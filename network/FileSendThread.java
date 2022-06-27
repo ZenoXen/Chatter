@@ -13,8 +13,8 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class FileSendThread extends Thread implements Terminable {
-    private Socket s;
-    private File file;
+    private final Socket s;
+    private final File file;
     private volatile boolean exit;
 
     public FileSendThread(Socket s, File file) {

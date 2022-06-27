@@ -4,7 +4,7 @@ import java.awt.*;
 import java.util.HashMap;
 
 public class ComponentManager {
-    private static HashMap<String, Component> components;
+    private static final HashMap<String, Component> components;
 
     static {
         components = new HashMap<String, Component>();

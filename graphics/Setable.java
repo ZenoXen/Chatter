@@ -1,9 +1,9 @@
 package graphics;
 
 public interface Setable {
-    public void init();
+    void init();
 
-    public void set();
+    void set();
 
-    public void addListeners();
+    void addListeners();
 }

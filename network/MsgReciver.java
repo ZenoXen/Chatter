@@ -9,7 +9,7 @@ import java.net.SocketException;
 
 public class MsgReciver extends Thread {
     private DatagramSocket ds;
-    private DatagramPacket dp;
+    private final DatagramPacket dp;
 
     public MsgReciver() {
         try {

@@ -37,8 +37,7 @@ public class StateReciver extends Thread {
     private boolean isLocal(String fromAddress) {
         boolean addrEqual = fromAddress.equals(NetworkConsts.localAddr.getHostAddress());
         boolean loopEqual = fromAddress.equals("127.0.0.1");
-        if (addrEqual && loopEqual) return true;
-        return false;
+        return addrEqual && loopEqual;
     }
 
     private boolean isBroadMsg(int port) {

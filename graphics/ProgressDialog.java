@@ -10,9 +10,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ProgressDialog extends JDialog {
-    private JLabel fileName;
-    private JProgressBar jpb;
-    private JButton btn;
+    private final JLabel fileName;
+    private final JProgressBar jpb;
+    private final JButton btn;
 
     public ProgressDialog(JFrame f, String title, boolean mode, String fileName, boolean isSend, Thread t) {
         super(f, title, mode);

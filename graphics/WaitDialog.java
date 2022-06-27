@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class WaitDialog extends JDialog {
-    private JLabel l;
-    private JLabel fileLabel;
+    private final JLabel l;
+    private final JLabel fileLabel;
 
     public WaitDialog(String file) {
         super((UI) ComponentManager.getReference("UI"), false);
@@ -18,6 +18,6 @@ public class WaitDialog extends JDialog {
         this.add(l, BorderLayout.NORTH);
         this.add(fileLabel, BorderLayout.CENTER);
         this.setSize(300, 200);
-        this.setLocationRelativeTo((UI) ComponentManager.getReference("UI"));
+        this.setLocationRelativeTo(ComponentManager.getReference("UI"));
     }
 }

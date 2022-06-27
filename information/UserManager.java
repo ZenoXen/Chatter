@@ -7,9 +7,9 @@ import java.util.HashMap;
 import java.util.Set;
 
 public class UserManager {
-    private static HashMap<InetAddress, String> onlineMsgs;
-    private static HashMap<InetAddress, String> users;
-    private static HashMap<String, InetAddress> addrs;
+    private static final HashMap<InetAddress, String> onlineMsgs;
+    private static final HashMap<InetAddress, String> users;
+    private static final HashMap<String, InetAddress> addrs;
 
     static {
         onlineMsgs = new HashMap<InetAddress, String>();
@@ -20,7 +20,7 @@ public class UserManager {
     public static void addUser(InetAddress ip, String nickname) {
         Date d = Calendar.getInstance().getTime();
         nickname = nickname.trim();
-        String text = nickname + " 加入时间: " + d.toString();
+        String text = nickname + " 加入时间: " + d;
         onlineMsgs.put(ip, text);
         users.put(ip, nickname);
         addrs.put(nickname, ip);

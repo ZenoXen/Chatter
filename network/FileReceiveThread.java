@@ -12,9 +12,9 @@ import java.net.Socket;
 import java.net.SocketException;
 
 public class FileReceiveThread extends Thread implements Terminable {
-    private Socket s;
-    private File file;
-    private long totalLen;
+    private final Socket s;
+    private final File file;
+    private final long totalLen;
     private volatile boolean exit;
 
     public FileReceiveThread(Socket s, File f, long len) {
