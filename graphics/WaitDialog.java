@@ -10,7 +10,7 @@ public class WaitDialog extends JDialog {
     public WaitDialog(String file) {
         super((UI) ComponentManager.getReference("UI"), false);
         JLabel fileLabel = new JLabel(file);
-        JLabel l = new JLabel("等待对方确认接受");
+        JLabel l = new JLabel("绛夊緟瀵规柟纭鎺ュ彈");
         this.setTitle("Waiting");
         this.setLayout(new BorderLayout());
         this.add(l, BorderLayout.NORTH);

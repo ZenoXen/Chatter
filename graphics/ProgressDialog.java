@@ -19,8 +19,8 @@ public class ProgressDialog extends JDialog {
         jpb = new JProgressBar();
         jpb.setIndeterminate(false);
         jpb.setStringPainted(true);
-        jpb.setString("´«ÊäÖĞ " + 0 + "%");
-        btn = new JButton("È¡Ïû");
+        jpb.setString("ä¼ è¾“ä¸­ " + 0 + "%");
+        btn = new JButton("å–æ¶ˆ");
         this.setSize(300, 200);
         this.setLayout(new BorderLayout());
         this.add(fileName1, BorderLayout.NORTH);
@@ -32,7 +32,7 @@ public class ProgressDialog extends JDialog {
 
     public void setValue(int val) {
         jpb.setValue(val);
-        jpb.setString("´«ÊäÖĞ " + val + "%");
+        jpb.setString("ä¼ è¾“ä¸­ " + val + "%");
     }
 
     private void addListeners(boolean isSend, Thread t) {

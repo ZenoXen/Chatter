@@ -25,7 +25,7 @@ public class SelectDialog extends JDialog implements Setable {
     @Override
     public void init() {
         cbx = new JComboBox<>();
-        confirm = new JButton("È·¶¨");
+        confirm = new JButton("ç¡®å®š");
     }
 
     @Override
@@ -40,7 +40,7 @@ public class SelectDialog extends JDialog implements Setable {
     public void refreshUsers() {
         Set<InetAddress> ipSet = UserManager.getKeys();
         cbx.removeAllItems();
-        cbx.addItem("-ÇëÑ¡Ôñ-");
+        cbx.addItem("-è¯·é€‰æ‹©-");
         for (InetAddress ip : ipSet) {
             String user = UserManager.getUser(ip);
             if (!user.equals(NickManager.getNick()))

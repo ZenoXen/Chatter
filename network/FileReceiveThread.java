@@ -45,7 +45,7 @@ public class FileReceiveThread extends Thread implements Terminable {
         byte[] buf = new byte[1024 * 1024];
         int len;
         ProgressDialog pd = new ProgressDialog((UI) ComponentManager.getReference("UI"),
-                "ÎÄ¼ş´«Êä", false,
+                "æ–‡ä»¶ä¼ è¾“", false,
                 file.getName(), false, this);
         try {
             pd.setVisible(true);
@@ -63,7 +63,7 @@ public class FileReceiveThread extends Thread implements Terminable {
             pd.setVisible(false);
         } catch (SocketException se) {
             pd.setVisible(false);
-            JOptionPane.showMessageDialog(ComponentManager.getReference("UI"), "¶Ô·½ÒÑÍ£Ö¹·¢ËÍ");
+            JOptionPane.showMessageDialog(ComponentManager.getReference("UI"), "å¯¹æ–¹å·²åœæ­¢å‘é€");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

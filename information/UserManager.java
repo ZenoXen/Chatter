@@ -20,7 +20,7 @@ public class UserManager {
     public static void addUser(InetAddress ip, String nickname) {
         Date d = Calendar.getInstance().getTime();
         nickname = nickname.trim();
-        String text = nickname + " 加入时间: " + d;
+        String text = nickname + " 鍔犲叆鏃堕棿: " + d;
         onlineMsgs.put(ip, text);
         users.put(ip, nickname);
         addrs.put(nickname, ip);

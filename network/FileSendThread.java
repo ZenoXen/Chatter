@@ -31,7 +31,7 @@ public class FileSendThread extends Thread implements Terminable {
             UtilController.closeSocket(s);
             wd.setVisible(false);
             JOptionPane.showMessageDialog(ComponentManager.getReference("UI")
-                    , "¶Ô·½¾Ü½Ó½ÓÊÜ");
+                    , "å¯¹æ–¹æ‹’æ¥æ¥å—");
             return;
         }
         wd.setVisible(false);
@@ -47,7 +47,7 @@ public class FileSendThread extends Thread implements Terminable {
         BufferedInputStream bis = null;
         BufferedOutputStream bos;
         ProgressDialog pd = new ProgressDialog((UI) ComponentManager.getReference("UI"),
-                "ÎÄ¼ş´«Êä", false,
+                "æ–‡ä»¶ä¼ è¾“", false,
                 file.getName(), true, this);
         try {
             bis = new BufferedInputStream(
@@ -70,7 +70,7 @@ public class FileSendThread extends Thread implements Terminable {
             pd.setVisible(false);
         } catch (SocketException se) {
             pd.setVisible(false);
-            JOptionPane.showMessageDialog(ComponentManager.getReference("UI"), "¶Ô·½ÒÑÖÕÖ¹½ÓÊÜ");
+            JOptionPane.showMessageDialog(ComponentManager.getReference("UI"), "å¯¹æ–¹å·²ç»ˆæ­¢æ¥å—");
         } catch (IOException e) {
             e.printStackTrace();
         } finally {

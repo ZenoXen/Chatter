@@ -21,9 +21,9 @@ public class ChatCenter extends JPanel implements Setable {
 
     @Override
     public void init() {
-        sendBtn = new JButton("·¢ËÍ");
-        clearBtn = new JButton("ÇåÆÁ");
-        transferBtn = new JButton("·¢ËÍÎÄ¼ş");
+        sendBtn = new JButton("å‘é€");
+        clearBtn = new JButton("æ¸…å±");
+        transferBtn = new JButton("å‘é€æ–‡ä»¶");
     }
 
     @Override
