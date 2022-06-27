@@ -12,7 +12,7 @@ public class Bar extends JMenuBar implements Setable {
     }
 
     public void init() {
-        m = new JMenu("²Ëµ¥");
+        m = new JMenu("èœå•");
     }
 
     public void set() {

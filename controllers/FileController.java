@@ -78,12 +78,12 @@ public class FileController {
     }
 
     private static String getInfo(String file, long len) {
-        String sb = "ÊÇ·ñ½ÓÊÜÎÄ¼ş" +
+        String sb = "æ˜¯å¦æ¥å—æ–‡ä»¶" +
                 System.lineSeparator() +
-                "ÎÄ¼şÃû: " +
+                "æ–‡ä»¶å: " +
                 file +
                 System.lineSeparator() +
-                "´óĞ¡: " +
+                "å¤§å°: " +
                 String.format("%.2f", (double) (len / (1024 * 1024))) +
                 " MB";
         return sb;

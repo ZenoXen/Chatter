@@ -43,7 +43,7 @@ public class StateController {
     }
 
     private static void inputNick() {
-        String nickname = JOptionPane.showInputDialog("输入你的聊天昵称");
+        String nickname = JOptionPane.showInputDialog("杈撳叆浣犵殑鑱婂ぉ鏄电О");
         NickManager.setNick(nickname);
     }
 }
